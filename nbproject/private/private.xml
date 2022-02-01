@@ -3,11 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Talha%20Bin%20Rais/Swing-Project/src/TableDeno/CategoryClass.java</file>
-            <file>file:/C:/Users/Talha%20Bin%20Rais/Swing-Project/src/TableDeno/MainDemo.java</file>
-            <file>file:/C:/Users/Talha%20Bin%20Rais/Swing-Project/src/TableDeno/TBDemo.java</file>
-            <file>file:/C:/Users/Talha%20Bin%20Rais/Swing-Project/src/TableDeno/Inventory.java</file>
-            <file>file:/C:/Users/Talha%20Bin%20Rais/Swing-Project/src/TableDeno/TableOp.java</file>
+            <file>file:/C:/Users/Talha%20Bin%20Rais/Swing-Project/src/inventorysysten/AdminTableForm.java</file>
+            <file>file:/C:/Users/Talha%20Bin%20Rais/Swing-Project/src/inventorysysten/FrontPage.java</file>
+            <file>file:/C:/Users/Talha%20Bin%20Rais/Swing-Project/src/inventorysysten/ADminUser.java</file>
+            <file>file:/C:/Users/Talha%20Bin%20Rais/Swing-Project/src/inventorysysten/PurchaseOrderUser.java</file>
+            <file>file:/C:/Users/Talha%20Bin%20Rais/Swing-Project/src/inventorysysten/UserViewData.java</file>
+            <file>file:/C:/Users/Talha%20Bin%20Rais/Swing-Project/src/inventorysysten/RegistrationForm.java</file>
+            <file>file:/C:/Users/Talha%20Bin%20Rais/Swing-Project/src/inventorysysten/UserFrontPage.java</file>
+            <file>file:/C:/Users/Talha%20Bin%20Rais/Swing-Project/src/inventorysysten/LoginFormUser.java</file>
+            <file>file:/C:/Users/Talha%20Bin%20Rais/Swing-Project/src/inventorysysten/LoginFormAdmin.java</file>
+            <file>file:/C:/Users/Talha%20Bin%20Rais/Swing-Project/src/inventorysysten/DatabaseConnect.java</file>
         </group>
     </open-files>
 </project-private>

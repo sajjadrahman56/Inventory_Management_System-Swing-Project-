@@ -1,4 +1,4 @@
-package TableDeno;
+package inventorysysten;
 
 import java.awt.Color;
 import java.awt.Container;
@@ -21,7 +21,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-public class CategoryClass extends JFrame implements ActionListener {
+public class AllUserNameWithDb extends JFrame implements ActionListener {
 
     JPanel panel1, panel2;
     Container container;
@@ -37,7 +37,7 @@ public class CategoryClass extends JFrame implements ActionListener {
     Connection con;
     PreparedStatement pst;
 
-    public CategoryClass() {
+    public AllUserNameWithDb() {
 
         initComponet();
         connect();
@@ -51,9 +51,9 @@ public class CategoryClass extends JFrame implements ActionListener {
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sajjad", "root", "");
 
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(CategoryClass.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AllUserNameWithDb.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(CategoryClass.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AllUserNameWithDb.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -82,7 +82,7 @@ public class CategoryClass extends JFrame implements ActionListener {
                 df.addRow(v2);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(CategoryClass.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AllUserNameWithDb.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
@@ -219,7 +219,7 @@ public class CategoryClass extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        new CategoryClass();
+        new AllUserNameWithDb();
     }
 
     @Override
@@ -249,7 +249,7 @@ public class CategoryClass extends JFrame implements ActionListener {
                 load();
 
             } catch (SQLException ex) {
-                Logger.getLogger(CategoryClass.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(AllUserNameWithDb.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else if (e.getSource() == refresh) {
             table.setModel(new DefaultTableModel(null, new String[]{"Id", "Name", "Phone", "Email", "Adress"}));
@@ -285,7 +285,7 @@ public class CategoryClass extends JFrame implements ActionListener {
                 upbtn.setEnabled(true);
 
             } catch (SQLException ex) {
-                Logger.getLogger(CategoryClass.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(AllUserNameWithDb.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else if (e.getSource() == delbtn) {
             try {
@@ -311,7 +311,7 @@ public class CategoryClass extends JFrame implements ActionListener {
                 upbtn.setEnabled(true);
 
             } catch (SQLException ex) {
-                Logger.getLogger(CategoryClass.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(AllUserNameWithDb.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else if (e.getSource() == cancel) {
             userName.setText("");

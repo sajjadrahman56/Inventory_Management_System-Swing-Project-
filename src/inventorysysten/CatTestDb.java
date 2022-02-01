@@ -1,3 +1,5 @@
+package inventorysysten;
+
 //package TableDeno;
 //
 //import java.awt.Color;
