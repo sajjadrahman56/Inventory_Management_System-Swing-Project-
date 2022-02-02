@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 public class RegistrationForm extends JFrame implements ActionListener {
 
     Container c;
-    JLabel label1, label2, label3, label4, label5, imageLabel, label6, label7, label8, label9;
+    JLabel  imageLabel, label6, label7, label8, label9;
     JLabel firstName, lastName, userName, email, mobile, password, conPassword;
     JTextField textField1, textField2, textField3, textField4, firstNameTf, lastNameTf, userNameTf, emailTf, mobileTf;
     JPanel panel1, panel2, panel3;
@@ -26,7 +26,9 @@ public class RegistrationForm extends JFrame implements ActionListener {
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(null);
-        this.setBounds(200, 100, 800, 650);
+       // this.setBounds(200, 100, 800, 650);
+        this.setSize(800, 650);
+        this.setLocationRelativeTo(null);
         this.setTitle("SinUp Form");
         this.setResizable(false);
 
@@ -182,16 +184,16 @@ public class RegistrationForm extends JFrame implements ActionListener {
             String UserName = userNameTf.getText();
             String email = emailTf.getText();
 
-            // String password = pass.getText(); 
+       
             String password = new String(pass.getPassword());
-            // new String(pass.getPassword());
+            
             //  String confirmPasswod = conPass.getText();
             String confirmPasswod = new String(conPass.getPassword());
 
-            String FirstNameRegex = "^[a-zA-Z .]+$";
-            String LastNameRegex = "^[a-zA-Z .]+$";
-            String userNameRegex = "^[a-zA-Z0-9 .]+$";
-            // String emailRegex = "^[a-z0-9]+@[a-z]+.[a-z]+$";
+            String FirstNameRegex = "^[a-zA-Z ]+$";
+            String LastNameRegex = "^[a-zA-Z ]+$";
+            String userNameRegex = "^[a-zA-Z0-9 ]+$";
+          
             String emailRegex = "^[a-z0-9]+@[a-z]+.((com)|(yahoo)|(net))+$";
             String passRegex = "(?=.*\\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%&*()]).{6,20}";
 

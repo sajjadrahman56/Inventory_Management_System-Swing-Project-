@@ -24,7 +24,7 @@ public class UserViewData extends JFrame implements ActionListener {
     JTable table;
     JScrollPane ScrollPane;
     JTextField searchtxt;
-    JButton searchBtn, backBtn;
+    JButton searchBtn, backBtn, refreshBtn;
     DefaultTableModel model, df;
     Connection con;
     PreparedStatement pst;
@@ -81,11 +81,22 @@ public class UserViewData extends JFrame implements ActionListener {
         backBtn.setFont(font1);
         imageLabel.add(backBtn);
 
+        refreshBtn = new JButton("Refresh");
+        refreshBtn.setBounds(320, 500, 110, 55);
+        refreshBtn.setBorder(BorderFactory.createLineBorder(Color.decode("#222021")));
+        refreshBtn.setFocusable(false);
+        refreshBtn.setBackground(Color.decode("#EB91C5"));
+        refreshBtn.setFont(font1);
+        imageLabel.add(refreshBtn);
+
         model = new DefaultTableModel(row, cols);
 
         table = new JTable(model);
         table.setSelectionBackground(Color.decode("#D7BFDC"));
         table.setBorder(BorderFactory.createLineBorder(Color.decode("#222021")));
+
+        table.setRowHeight(24);
+        table.setFont(new Font("Arial", Font.CENTER_BASELINE, 16));
 
         ScrollPane = new JScrollPane(table);
         ScrollPane.setBounds(520, 140, 595, 430);
@@ -96,6 +107,7 @@ public class UserViewData extends JFrame implements ActionListener {
         load();
         searchBtn.addActionListener(this);
         backBtn.addActionListener(this);
+        refreshBtn.addActionListener(this);
 
         setVisible(true);
     }
@@ -103,7 +115,7 @@ public class UserViewData extends JFrame implements ActionListener {
     public void connect() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            // con = DriverManager.getConnection("jdbc:mysql://localhost/sajjad","root","");
+
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ourswingproject", "root", "");
 
         } catch (ClassNotFoundException ex) {
@@ -114,23 +126,22 @@ public class UserViewData extends JFrame implements ActionListener {
     }
 
     public void load() {
-        int a;
+        int rowNumber;
         try {
             pst = con.prepareStatement("select * from products");
 
             ResultSet rs = pst.executeQuery();
             ResultSetMetaData rd = rs.getMetaData();
 
-            a = rd.getColumnCount();
+            rowNumber = rd.getColumnCount();
             df = (DefaultTableModel) table.getModel();
             df.setRowCount(0);
-            //table = (DefaultTableModel)table.getModel();
 
             while (rs.next()) {
 
                 Vector v2 = new Vector();
 
-                for (int i = 1; i <= a; i++) {
+                for (int i = 1; i <= rowNumber; i++) {
                     v2.add(rs.getString("Id"));
                     v2.add(rs.getString("Name"));
                     v2.add(rs.getString("Price"));
@@ -153,10 +164,10 @@ public class UserViewData extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         if (e.getSource() == searchBtn) {
-            JOptionPane.showMessageDialog(null, " I am From Search Box Here ");
+            //JOptionPane.showMessageDialog(null, " I am From Search Box Here ");
 
             int a;
-            //    serachTf.getText();
+
             try {
                 pst = con.prepareStatement("select * from products WHERE Category = '" + searchtxt.getText() + "' ");
 
@@ -166,29 +177,28 @@ public class UserViewData extends JFrame implements ActionListener {
                 a = rd.getColumnCount();
                 df = (DefaultTableModel) table.getModel();
                 df.setRowCount(0);
-                //table = (DefaultTableModel)table.getModel();
 
                 while (rs.next()) {
-                    Vector v2 = new Vector();
+                    Vector dataKeppVector = new Vector();
                     for (int i = 1; i <= a; i++) {
-                        v2.add(rs.getString("Id"));
-                        v2.add(rs.getString("Name"));
-                        v2.add(rs.getString("Price"));
-                        v2.add(rs.getString("Quantity"));
-                        v2.add(rs.getString("Category"));
+                        dataKeppVector.add(rs.getString("Id"));
+                        dataKeppVector.add(rs.getString("Name"));
+                        dataKeppVector.add(rs.getString("Price"));
+                        dataKeppVector.add(rs.getString("Quantity"));
+                        dataKeppVector.add(rs.getString("Category"));
                     }
-//                Object newRow[]= {Name,,id};
-//				model.addRow(newRow);
-                    df.addRow(v2);
+
+                    df.addRow(dataKeppVector);
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(AllUserNameWithDb.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }
-        else if( e.getSource() ==  backBtn)
-        {
+        } else if (e.getSource() == backBtn) {
             dispose();
             new UserFrontPage();
+        } else if (e.getSource() == refreshBtn) {
+            searchtxt.setText("");
+            load();
         }
     }
 

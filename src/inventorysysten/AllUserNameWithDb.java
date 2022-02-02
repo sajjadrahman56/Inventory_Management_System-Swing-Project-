@@ -168,25 +168,7 @@ public class AllUserNameWithDb extends JFrame implements ActionListener {
         sp.setBounds(520, 10, 465, 380);
         add(sp);
 
-        //////////////////////////////////
-        // DB
-//        table.addMouseListener(new MouseAdapter() {
-//            @Override
-//            public void mouseClicked(MouseEvent e) {
-//                int rowIndex = table.getSelectedRow();
-//                //System.out.println(rowIndex);
-//                dbName = (String) model.getValueAt(rowIndex, 1);//row, column
-//                dbPhone = (String) model.getValueAt(rowIndex, 2);
-//                dbEmail = (String) model.getValueAt(rowIndex, 3);
-//                dbAddress = (String) model.getValueAt(rowIndex, 4);
-//
-//                userName.setText(dbName);
-//                userPhone.setText(dbPhone);
-//                userEmail.setText(dbEmail);
-//                userAdress.setText(dbAddress);
-//            }
-//        });
-// data mouse event to textfield
+       
         table.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -281,7 +263,7 @@ public class AllUserNameWithDb extends JFrame implements ActionListener {
                 userAdress.setText("");
                 userName.requestFocus();
                 load();
-                //that means my update is done so edit is onpen 
+               
                 upbtn.setEnabled(true);
 
             } catch (SQLException ex) {

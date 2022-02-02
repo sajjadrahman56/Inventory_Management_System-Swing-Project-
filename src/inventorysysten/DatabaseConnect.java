@@ -6,10 +6,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Talha Bin Rais
- */
+
 public class DatabaseConnect {
 
     private Statement st;

@@ -12,7 +12,7 @@ public class ADminUser extends JFrame implements ActionListener {
     ImageIcon icon;
     JButton Admin, user;
     Font f1, f2;
-    JButton ADMIN, USER ,Exit;
+    JButton ADMIN, USER, Exit;
 
     ADminUser() {
         initComponent();
@@ -22,7 +22,9 @@ public class ADminUser extends JFrame implements ActionListener {
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(null);
-        this.setBounds(200, 50, 880, 560);
+        // this.setBounds(200, 50, 880, 560);
+        this.setSize(880, 560);
+        this.setLocationRelativeTo(null);
         this.setTitle("AdminUser");
         this.setResizable(false);
 
@@ -65,7 +67,7 @@ public class ADminUser extends JFrame implements ActionListener {
         Exit.setFocusable(false);
         Exit.setBackground(Color.decode("#F6C5F7"));
         imageLabel.add(Exit);
-        
+
         USER.addActionListener(this);
         ADMIN.addActionListener(this);
         Exit.addActionListener(this);
@@ -81,11 +83,11 @@ public class ADminUser extends JFrame implements ActionListener {
         } else if (e.getSource() == USER) {
             dispose();
             new LoginFormUser();
-        }else if (e.getSource() == Exit) {
+        } else if (e.getSource() == Exit) {
             dispose();
-            new  FrontPage();
+            new FrontPage();
         }
-        
+
     }
 
     public static void main(String[] args) {

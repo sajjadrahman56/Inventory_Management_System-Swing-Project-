@@ -25,7 +25,9 @@ public class UserFrontPage extends JFrame implements ActionListener {
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(null);
-        this.setBounds(50, 10, 1150, 640);
+        //this.setBounds(50, 10, 1150, 640);
+        this.setSize(1150, 640);
+        this.setLocationRelativeTo(null);
         
         this.setTitle("Front Page");
         this.setResizable(false);

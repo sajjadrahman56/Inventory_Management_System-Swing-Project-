@@ -49,7 +49,9 @@ public class PurchaseOrderUser extends JFrame implements ActionListener {
     public void initComponent() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(null);
-        this.setBounds(0, 0, 1243, 900);
+       // this.setBounds(0, 0, 1243, 900);
+        this.setSize(1243, 900);
+        this.setLocationRelativeTo(null);
 
         this.setTitle("Puchase ");
         //this.setResizable(false);

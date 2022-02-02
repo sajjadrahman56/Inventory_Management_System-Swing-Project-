@@ -21,7 +21,9 @@ public class FrontPage extends JFrame implements ActionListener {
     public void initComponent() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(null);
-        this.setBounds(200, 50, 965, 586);
+       // this.setBounds(200, 50, 965, 586);
+        this.setSize(965, 586);
+        this.setLocationRelativeTo(null);
         this.setTitle("Front Page");
         this.setResizable(false);
 
@@ -53,8 +55,7 @@ public class FrontPage extends JFrame implements ActionListener {
         Start.setBackground(Color.decode("#F6C5F7"));
         imageLabel.add(Start);
 
-        //Start.addAncestorListener((AncestorListener) this);
-        //start to go registration from 
+      
         Start.addActionListener(this);
         Exit.addActionListener(this);
 

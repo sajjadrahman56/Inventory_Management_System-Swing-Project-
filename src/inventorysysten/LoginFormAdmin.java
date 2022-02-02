@@ -23,8 +23,9 @@ public class LoginFormAdmin extends JFrame {
         
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(null);
-        this.setBounds(200, 100, 735, 483);
-       // this.setBounds(200, 100, 800, 550);
+        //this.setBounds(200, 100, 735, 483);
+       this.setSize(735, 483);;
+        this.setLocationRelativeTo(null);
         this.setTitle("Admin SinIn Form");
         this.setResizable(false);
         
