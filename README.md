@@ -1,5 +1,4 @@
-# Swing-Project
-(Inventory management system )
+# Swing-Project "Inventory management system"
 
 At first I would like to thank you to my team mate Wassi .
 This is first time we add database in our project
@@ -14,7 +13,7 @@ Picture - 01 [ Font Page ]
  
  ![092](https://user-images.githubusercontent.com/67529599/152096609-e79e45fc-f20a-4086-982e-059210836189.JPG)
 
-Picture - 03 [ Andmin User Option ]
+Picture - 03 [ Admin User Option ]
 
 ![093](https://user-images.githubusercontent.com/67529599/152097373-c5025135-cebe-4547-990e-134db96aa1a8.JPG)
 
