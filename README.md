@@ -29,3 +29,9 @@ Picture - 05 [ Purchase by user]
 Picture - 06 [ Admin Page]
 
 ![098](https://user-images.githubusercontent.com/67529599/152097755-845d672e-0605-4c60-8ab9-b06777ed3934.JPG)
+
+#Description 
+
+The project mainly distributin by two parts . 
+1. User -> where user can see the how many products are available in Database as well as User Purchase items If they want after sucessfully purchase then insert into data base
+2. Admin -> who can control the database . Update Product name , Delete and Insert into Database 
